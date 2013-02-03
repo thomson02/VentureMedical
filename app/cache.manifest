@@ -1,5 +1,8 @@
 CACHE MANIFEST
 # git sha1: <%= githash %>
 
+CACHE:
+templates/homePage.html
+
 NETWORK:
 *
