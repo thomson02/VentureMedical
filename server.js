@@ -49,8 +49,19 @@ app.get('/', function(req, res) {
 });
 
 app.post('/deployed', function(req, res) {
-    // update git sha1 in manifest file
-    process.env.GIT_SHA = req.body.head_long || "NOT_SET";
+    // authenticate
+    var header=req.headers['authorization']||'',        // get the header
+        token=header.split(/\s+/).pop()||'',            // and the encoded auth token
+        auth=new Buffer(token, 'base64').toString(),    // convert from base64
+        parts=auth.split(/:/),                          // split on colon
+        username=parts[0],
+        password=parts[1];
+
+    if (username === process.env.HOOK_USER && password === process.env.HOOK_PASS) {
+        // update git sha1 in manifest file
+        process.env.GIT_SHA = req.body.head_long || "NOT_SET";
+    }
+
     res.end();
     return;
 });
