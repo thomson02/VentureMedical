@@ -1,0 +1,134 @@
+/* HEADER */
+div.headerRow {
+    margin-top: 15px;
+}
+
+div.logo {
+    background: url("/img/vm-logo.gif") no-repeat;
+    height: 63px;
+}
+
+div.headerRow ul.nav {
+    margin-top: 21px;
+}
+
+/* Override nav menu css */
+.nav-pills > li > a {
+    -webkit-border-radius:  0px;
+    border-radius: 0px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #626262;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+    background: #dfdfdf;
+    border: 1px solid #d2d2d2;
+}
+
+.nav-pills > .active > a {
+    color: #393939;
+}
+
+.nav-pills > .active > a:hover {
+    color: #626262;
+}
+
+.nav > li > a:hover {
+    background-color: #ffffff;
+    color: #035094;
+}
+
+.nav-tabs .dropdown-toggle .caret, .nav-pills .dropdown-toggle .caret {
+    border-top-color: #626262;
+    border-bottom-color: #626262;
+}
+
+/* BANNER */
+div.bannerBackground {
+    background: url("/img/bannerBackground.gif");
+    height: 172px;
+    width: 100%;
+}
+
+.bannerBackground div.container {
+    background: url("/img/blankBackground.jpg") no-repeat;
+    background-position: center;
+    height: 172px;
+}
+
+/* FOOTER */
+div.footer {
+    background-color: #f2f2f2;
+    position: relative;
+    margin-top: -95px;
+    height: 95px;
+    width: 100%;
+    clear: both;
+    border-top: solid 1px #d2d2d2;
+}
+
+div.smallLogo {
+    background: url("/img/smallLogo.gif") no-repeat;
+    height: 18px;
+    padding-left: 27px
+}
+
+/* COMMON */
+.rightAlign {
+    float: right;
+}
+
+.leftAlign {
+    float: left;
+}
+
+
+/*
+    ColorBox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width: none;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box;}
+
+/*
+    User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay{background:#000;}
+#colorbox{}
+#cboxContent{margin-top:20px;}
+.cboxIframe{background:#fff;}
+#cboxError{padding:50px; border:1px solid #ccc;}
+#cboxLoadedContent{border:5px solid #000; background:#fff;}
+#cboxTitle{position:absolute; top:-20px; left:0; color:#ccc;}
+#cboxCurrent{position:absolute; top:-20px; right:0px; color:#ccc;}
+#cboxSlideshow{position:absolute; top:-20px; right:90px; color:#fff;}
+#cboxPrevious{position:absolute; top:50%; left:5px; margin-top:-32px; background:url(../img/controls.png) no-repeat top left; width:28px; height:65px; text-indent:-9999px;}
+#cboxPrevious:hover{background-position:bottom left;}
+#cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:url(../img/controls.png) no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
+#cboxNext:hover{background-position:bottom right;}
+#cboxLoadingOverlay{background:#000;}
+#cboxLoadingGraphic{background:url(../img/loading.gif) no-repeat center center;}
+#cboxClose{position:absolute; top:5px; right:5px; display:block; background:url(../img/controls.png) no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
+#cboxClose:hover{background-position:bottom center;}
+
+#faq li { position: relative; margin: 0 0 15px 0; padding: 0 0 0 30px; list-style: none;  }
+#faq li span { position: absolute; top: 0; left: 0px; display: block; width: 19px; height: 19px; background: url(/img/ico-faq.gif) 0 -19px no-repeat;  }
+#faq li span:hover { cursor:pointer;}
+#faq li h3 { color: #075d9f; font-size: 1em; font-weight:bold; margin-bottom: 2px;  }
+#faq li h3:hover {cursor:pointer;}
+#faq li div { margin-bottom: 5px; display: none;  }
+#faq li div  p { margin-bottom: 0; }
+#faq li.active span { background: url(/img/ico-faq.gif) 0 0 no-repeat;  }

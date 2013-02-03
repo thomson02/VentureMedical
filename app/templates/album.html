@@ -1,0 +1,11 @@
+<div class="thumbnail" style="cursor: pointer">
+    <div style="height: 157px; background-position: center; background-image: url('<%= photos[0].images[4].source %>'); background-size: cover"></div>
+    <div class="caption">
+        <h5 style="height: 36px; max-height: 36px; overflow: hidden;"><%= name %></h5>
+    </div>
+    <div style="display: none">
+        <% _.each(photos, function(p, i){ %>
+            <a class="group<%= id%>" href="<%= p.images[2].source %>"></a>
+        <% }); %>
+    </div>
+</div>
