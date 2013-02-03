@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# git sha1: <% githash %>
+# git sha1: <%= githash %>
 
 NETWORK:
 *
