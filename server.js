@@ -34,7 +34,7 @@ app.get("/cache.manifest", function(req, res){
 
         res.header("Content-Type", "text/cache-manifest");
         res.end(_.template(data, { githash: process.env.GIT_SHA }));
-        return console.log(data);
+        return;
     });
 });
 
@@ -49,7 +49,9 @@ app.get('/', function(req, res) {
 });
 
 app.post('/deployed', function(req, res) {
+    // update git sha1 in manifest file
     process.env.GIT_SHA = req.body.head_long || "NOT_SET";
+    res.end();
     return;
 });
 
