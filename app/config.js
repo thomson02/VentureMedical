@@ -7,13 +7,9 @@ requirejs.config({
         'bootstrap': 'components/bootstrap/bootstrap.min',
         'text': 'components/requirejs/plugins/text',
         'colorbox': 'components/jquery/plugins/colorbox-min',
-        'dateFormat': 'components/utils/date.format',
-        'facebook': 'https://connect.facebook.net/en_US/all/debug'
+        'dateFormat': 'components/utils/date.format'
     },
     shim: {
-        'facebook': {
-            exports: 'FB'
-        },
         'underscore': {
             exports: '_'
         },
