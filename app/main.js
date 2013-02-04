@@ -2,19 +2,8 @@ requirejs(['jquery', 'backbone', 'router', 'facebook'],
     function($, Backbone, Router, FB) {
         $(function() {
 
-            // init the Facebook JS SDK
-            FB.init( {
-                appId: '152258138262472', // App ID from the App Dashboard
-                channelUrl: '//' + window.location.hostname + '/facebook-channel.html', // Channel File for x-domain communication
-                status: true, // check the login status upon init?
-                cookie: true, // set sessions cookies to allow your server to access the session?
-                xfbml: true // parse XFBML tags on this page?
-            });
+            $.getJSON('https://graph.facebook.com/oauth/access_token?client_id=152258138262472&amp;client_secret=74f75f611a69cb0a2e47f1d2c897c5a2&amp;grant_type=client_credentials', function(r){
 
-            FB.login(function(response) {
-                if (response.authResponse) {
-                    var accessToken = response.authResponse.accessToken;
-                }
             });
 
             new Router({});
