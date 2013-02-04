@@ -2,9 +2,10 @@ define([
     'underscore',
     'jquery',
     'backbone',
+    'facebook',
     'text!templates/homePage.html'
 ],
-    function(_, $, Backbone, Template) {
+    function(_, $, Backbone, FB, Template) {
 
         var publics = {};
 
@@ -19,6 +20,9 @@ define([
             },
 
             applyFacePile: function(){
+                
+
+                /*
                 (function(d, s, id) {
                     var js, fjs = d.getElementsByTagName(s)[0];
                     if (d.getElementById(id)) return;
@@ -26,6 +30,7 @@ define([
                     js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=184906128237600";
                     fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));
+                */
             },
 
             render: function(){
