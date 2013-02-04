@@ -1,0 +1,23 @@
+<div class="span12">
+    <h3>Facebook Posts</h3>
+
+    <% _.each(posts, function(post) { %>
+
+        <div class="row" style="margin-top: 40px;">
+            <div class="span1">
+                <% if (post.picture) { %>
+                    <img src="<%= post.picture %>" class="img-polaroid"/>
+                <% } else { %>
+                    <img src="http://placehold.it/260x180" class="img-polaroid"/>
+                <% } %>
+            </div>
+            <div class="span4">
+                <h5><% if (post.name) { print(post.name); } %> <i>(<% if (post.created_time) { print(post.created_time); } %>)</i></h5>
+                <p><%= post.message %></p>
+                <% if (post.description) { %><p><i><%= post.description %></i></p><% } %>
+                <% if (post.link) { %><a href="<%= post.link %>">More Info...</a><% } %>
+            </div>
+        </div>
+
+    <% }); %>
+</div>
