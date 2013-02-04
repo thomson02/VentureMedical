@@ -8,7 +8,7 @@ requirejs.config({
         'text': 'components/requirejs/plugins/text',
         'colorbox': 'components/jquery/plugins/colorbox-min',
         'dateFormat': 'components/utils/date.format',
-        'facebook': 'https://connect.facebook.net/en_US/all/debug.js'
+        'facebook': 'https://connect.facebook.net/en_US/all/debug'
     },
     shim: {
         'facebook': {
