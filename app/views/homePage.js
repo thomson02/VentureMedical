@@ -2,10 +2,9 @@ define([
     'underscore',
     'jquery',
     'backbone',
-    'facebook',
     'text!templates/homePage.html'
 ],
-    function(_, $, Backbone, FB, Template) {
+    function(_, $, Backbone, Template) {
 
         var publics = {};
 
@@ -25,7 +24,7 @@ define([
                 $.get('https://graph.facebook.com/oauth/access_token?client_id=152258138262472&client_secret=74f75f611a69cb0a2e47f1d2c897c5a2&grant_type=client_credentials', function(r){
                     var access_token = console.log(r.split('=')[1]);
                     $.getJSON('https://graph.facebook.com/VentureMedicalUk/posts?limit=5&access_token=' + access_token, function(response) {
-                        
+
                     });
                 });
 
