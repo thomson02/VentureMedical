@@ -19,6 +19,9 @@ requirejs.config({
         'bootstrap': {
             deps: ['jquery']
         },
+        'dateFormat': {
+            exports: 'dateFormat'
+        },
         'backbone': {
             //These script dependencies should be loaded before loading
             //backbone.js

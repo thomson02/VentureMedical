@@ -39,11 +39,11 @@ app.get("/cache.manifest", function(req, res){
 });
 
 app.get('/', function(req, res) {
-    fs.readFile('./app/index.html', 'utf8', function (err, data){
+    fs.readFile('./app/index.html', 'utf8', function
+        (err, data){
         if (err) {
             return console.log(err);
         }
-
         return res.end(_.template(data, { devmode: process.env.DEVMODE == "1" }));
     });
 });
