@@ -29,7 +29,7 @@ define([
                     // get 6 posts
                     $.getJSON('https://graph.facebook.com/VentureMedicalUk/posts?fields=created_time,description,message,name,picture,link&limit=10&access_token=' + access_token, function(response) {
                         var posts = _.chain(response.data).filter(function(post){ return post.message; }).first(6).value();
-                        _.each(posts, function(p) { p.created_time = new Date(p.created_time).format(dateFormat.masks.longDate); });
+                        _.each(posts, function(p) { p.created_time = new Date(p.created_time.replace("+0000", "")).format(dateFormat.masks.longDate); });
                         that.$("#facebookPosts").html(_.template(FacebookPostsTemplate, { posts: posts }));
                     });
                 });
