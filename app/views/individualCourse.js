@@ -15,11 +15,13 @@ define([
     'text!templates/courses/anaphylaxis.html',
     'text!templates/courses/family.html',
     'text!templates/courses/bike.html',
+    'text!templates/courses/winter_hills.html',
+    'text!templates/courses/outdoor_refresh.html',
     'text!templates/courseDate.html',
     'text!templates/courseEnquiry.html',
     'dateFormat'
 ],
-    function(_, $, Backbone, tmplA, tmplB, tmplC, tmplD, tmplE, tmplF, tmplG, tmplH, tmplI, tmplJ, tmplK, tmplL, tmplM, courseDateTemplate, courseEnquiryTemplate) {
+    function(_, $, Backbone, tmplA, tmplB, tmplC, tmplD, tmplE, tmplF, tmplG, tmplH, tmplI, tmplJ, tmplK, tmplL, tmplM, tmplN, tmplO, courseDateTemplate, courseEnquiryTemplate) {
 
         var publics = {};
 
@@ -36,7 +38,9 @@ define([
             'aed_training': tmplJ,
             'anaphylaxis': tmplK,
             'family': tmplL,
-            'bike': tmplM
+            'bike': tmplM,
+            'winter_hills': tmplN,
+            'outdoor_refresh': tmplO
         };
 
         /* VIEW */
