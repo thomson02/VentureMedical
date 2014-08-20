@@ -7,7 +7,7 @@
         "mongoose": "~3.4.0",
         "underscore": "*",
         "requirejs": "*",
-        "nodemailer": "*"
+        "nodemailer": "1.0.0"
     },
     "engines": {
         "node": "0.8.x",
