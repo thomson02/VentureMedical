@@ -2,6 +2,7 @@ define([
     'underscore',
     'jquery',
     'backbone',
+    'calendarEvents',
     'text!templates/courses/adventurous_activities.html',
     'text!templates/courses/security_operatives.html',
     'text!templates/courses/canine.html',
@@ -21,7 +22,7 @@ define([
     'text!templates/courseEnquiry.html',
     'dateFormat'
 ],
-    function(_, $, Backbone, tmplA, tmplB, tmplC, tmplD, tmplE, tmplF, tmplG, tmplH, tmplI, tmplJ, tmplK, tmplL, tmplM, tmplN, tmplO, courseDateTemplate, courseEnquiryTemplate) {
+    function(_, $, Backbone, calendarEvents, tmplA, tmplB, tmplC, tmplD, tmplE, tmplF, tmplG, tmplH, tmplI, tmplJ, tmplK, tmplL, tmplM, tmplN, tmplO, courseDateTemplate, courseEnquiryTemplate) {
 
         var publics = {};
 
@@ -90,54 +91,18 @@ define([
                 $("#mainMenu li.courses").addClass("active");
 
                 this.courseName = options.courseName;
-                this.calendarEvents = [];
-                this.calendarUrl = "http://www.google.com/calendar/feeds/venture-medical.com_c4s74l58last7cus0aiuakjk6s@group.calendar.google.com/public/full?alt=json&q=%22" + encodeURIComponent(this.courseName) + "%22&orderby=starttime&max-results=15&singleevents=true&sortorder=ascending&futureevents=true";
-            },
-
-            fetchDates: function(){
-                var that = this;
-                $.getJSON(this.calendarUrl, function(data){
-                    if (data.feed.entry && data.feed.entry.length > 0){
-                        that.calendarEvents = _.map(data.feed.entry, function(entry){
-                            var endTime = new Date(entry.gd$when[0].endTime);
-                            endTime.setHours(endTime.getHours() - 2)
-
-                            return {
-                              title: entry.title.$t,
-                              description: entry.content.$t,
-                              where: entry.gd$where[0].valueString,
-                              when: that.toReadableDateString(new Date(entry.gd$when[0].startTime), endTime)
-                            };
-                        });
-                    }
-
-                    that.$el.find("#tab3").append(_.template(courseDateTemplate, { dates: that.calendarEvents }));
-                });
-            },
-
-            toReadableDateString: function(startDate, endDate){
-                var sameDay = startDate.getFullYear() == endDate.getFullYear() &&
-                              startDate.getMonth() == endDate.getMonth() &&
-                              startDate.getDay() == endDate.getDay();
-
-                if (sameDay){
-                    return startDate.format("mmmm dS, yyyy");
-                }
-                else{
-                    if (startDate.getMonth() == endDate.getMonth()){
-                        return startDate.format("mmmm dS") + " and " + endDate.format("dS, yyyy");
-                    }
-                    else {
-                        return startDate.format("mmmm dS") + " to " + endDate.format("mmmm dS, yyyy");
-                    }
-                }
             },
 
             render: function(){
                 this.$el.html(_.template(templateMapping[this.courseName])());
                 this.$el.append(_.template(courseEnquiryTemplate, { courseName: this.courseName }));
 
-                this.fetchDates();
+                var dates = calendarEvents && calendarEvents[this.courseName] ? calendarEvents[this.courseName] : [];
+                dates = _.filter(dates, function(d){
+                   return d.date >= new Date(); // in the future
+                });
+
+                this.$el.find("#tab3").append(_.template(courseDateTemplate, { dates: dates }));
             }
         });
 

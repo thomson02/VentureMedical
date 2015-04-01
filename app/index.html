@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" <% if (!devmode) { %> manifest="/cache.manifest" <% } %> > <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -19,11 +19,8 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <% if (devmode) { %>
-        <script src="http://static.venture-medical.com.s3.amazonaws.com/components/requirejs/require.js" data-main="config"></script>
-    <% } else { %>
-        <script src="http://static.venture-medical.com.s3.amazonaws.com/components/requirejs/require.js" data-main="main-built"></script>
-    <% } %>
+
+    <script src="http://static.venture-medical.com.s3.amazonaws.com/components/requirejs/require.js" data-main="config"></script>
 
 </head>
 
